@@ -1,8 +1,7 @@
 
 use md4::{Md4, Digest};
-use hex_literal::*;
+
 use base16ct;
-use md4::digest::Output;
 
 
 fn print_hex_bytes(bytes: &[u8]) {

@@ -10,7 +10,7 @@ fn main() -> Result<(), Box<(dyn std::error::Error + 'static)>> {
 
     let path;
     if args.len() == 1 {
-        println!("Using path : .");
+        println!("Path parameter not given. Using current directory : .");
         path = std::path::Path::new(".");
     }else {
         println!("Using path : {}", args[1]);
