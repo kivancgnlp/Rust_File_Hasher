@@ -5,7 +5,18 @@ mod hash_fonksiyonlari;
 
 fn main() -> Result<(), Box<(dyn std::error::Error + 'static)>> {
 
-    let path = std::path::Path::new(".");
+    let args: Vec<String> = std::env::args().collect();
+    println!("Args len : {}", args.len());
+
+    let path;
+    if args.len() == 1 {
+        println!("Using path : .");
+        path = std::path::Path::new(".");
+    }else {
+        println!("Using path : {}", args[1]);
+        path = std::path::Path::new(&args[1]);
+    }
+
 
     let files  = path.read_dir()?;
 
